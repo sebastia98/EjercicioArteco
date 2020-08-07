@@ -1,48 +1,62 @@
 package edu.elsmancs.pruebaArteco;
 
+import java.util.ArrayList;
 
 public class Counter {
-
-	private char[] loren = null;
+	
+	String lorenString = null;
+	private char[] lorenArrayChar = null;
+	private ArrayList<String> arrayListLoren = new ArrayList<String>();
 	
 	public Counter(String loren) {
-		// TODO Auto-generated constructor stub
-		this.loren = loren.toCharArray();
+		this.lorenString = loren;
 	}
+	
+	private void setArrayList(String loren) {
+		
+		String palabra = "";
+		
+		for (int i = 0; i < loren.length(); i++) {
+			
+			if (loren.charAt(i) != ' ' && loren.charAt(i) != '.' &&
+				loren.charAt(i) != ',' && loren.charAt(i) != '\n') {
+				palabra = palabra + loren.charAt(i);
 
-	public int countWords() {
-		// TODO Auto-generated method stub
-		
-		// Comprobamos que el texto no esté vacío
-		
-		if (loren.length == 0) {
-			return 0;
-		}
-		
-		// Iniciamos en uno el contador para tener en cuenta la primera palabra
-		int contador = 1;
-		
-		for (int i = 0; i < loren.length; i ++) {
-			if (loren[i] == ' ' && loren[i + 1] != ' ') { 
-				contador ++;
-			} else if (loren[i] == '\n' && loren[i + 1] == '\n'){
-				contador ++;
+			} else {
+				if (palabra != "") {
+					arrayListLoren.add(palabra);
+					palabra = "";
+				}
 			}
 		}
-		return contador;
 	}
-
+	
+	private void setArrayChar(String loren) {
+		this.lorenArrayChar = loren.toCharArray();
+	}
+	
+	public char[] getArrayChar() {
+		return this.lorenArrayChar;
+	}
+	
+	public ArrayList<String> getArrayList(){
+		return arrayListLoren;
+	}
+	
+	public int countWords() {
+		setArrayList(this.lorenString);
+		return getArrayList().size();
+	}
+	
 	public int countPhrases() {
 		// TODO Auto-generated method stub
 		
-		if (loren.length == 0) {
-			return 0;
-		}
+		setArrayChar(this.lorenString);
 		
 		int contador = 0;
 		
-		for (int i = 0; i < loren.length; i ++) {
-			if (loren[i] == '.') {
+		for (int i = 0; i < getArrayChar().length; i ++) {
+			if (getArrayChar()[i] == '.') {
 				contador ++;
 			}
 		}
