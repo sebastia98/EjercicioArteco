@@ -1,5 +1,6 @@
 package edu.elsmancs.pruebaArteco;
 
+
 public class Counter {
 	
 	String loren = null;
@@ -29,6 +30,22 @@ public class Counter {
 				contador ++;
 			}
 		}
+		return contador;
+	}
+
+	public int countParagraphs() {
+		// TODO Auto-generated method stub
+		
+		conversor.setArrayChar(this.loren);
+		
+		int contador = 1;
+		
+		for (int i = 0; i < conversor.getArrayChar().length; i ++) {
+			if (conversor.getArrayChar()[i] == '\n' && conversor.getArrayChar()[i + 1] == '\n') {
+				contador ++;
+			}
+		}
+		
 		return contador;
 	}
 

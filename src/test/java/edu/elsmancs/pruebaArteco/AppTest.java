@@ -44,4 +44,10 @@ public class AppTest
     	Counter contador = new Counter(texto);
     	assertTrue(contador.countPhrases() == 5);
     }
+    
+    @Test
+    public void contarParagraphsTest() {
+    	Counter contador = new Counter(texto);
+    	assertTrue(contador.countParagraphs() == 3);
+    }
 }

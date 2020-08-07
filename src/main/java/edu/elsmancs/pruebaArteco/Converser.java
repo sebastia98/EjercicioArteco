@@ -9,6 +9,7 @@ public class Converser {
 	
 	public Converser(String loren) {
 		this.lorenString = loren;
+
 	}
 	
 	public void setArrayList(String loren) {
