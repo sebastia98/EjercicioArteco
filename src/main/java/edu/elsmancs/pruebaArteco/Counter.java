@@ -12,6 +12,14 @@ public class Counter {
 
 	public int countWords() {
 		// TODO Auto-generated method stub
+		
+		// Comprobamos que el texto no esté vacío
+		
+		if (loren.length == 0) {
+			return 0;
+		}
+		
+		// Iniciamos en un para tener en cuenta la primera palabra
 		int contador = 1;
 		
 		for (int i = 0; i < loren.length; i ++) {
@@ -23,6 +31,5 @@ public class Counter {
 		}
 		return contador;
 	}
-	
 
 }

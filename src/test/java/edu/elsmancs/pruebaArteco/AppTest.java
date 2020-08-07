@@ -67,9 +67,25 @@ public class AppTest
         assertTrue( true );
     }
     
+    // Contar palabras
+    
     @Test
     public void contarPalabrasTest() {
     	Counter contador = new Counter(loren);
     	assertTrue(contador.countWords() == 404);
+    }
+    
+    @Test
+    public void textoVacioTest() {
+    	Counter contador = new Counter("");
+    	assertTrue(contador.countWords() == 0);
+    }
+    
+    // Contar frases
+    
+    @Test
+    public void contarFrasesTest() {
+    	Counter contador = new Counter("Hola. Como estás. Yo bien. Me gusta Arteco.");
+    	assertTrue(contador.countPhrases() == 4);
     }
 }
