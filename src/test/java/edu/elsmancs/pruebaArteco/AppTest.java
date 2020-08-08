@@ -1,6 +1,10 @@
 package edu.elsmancs.pruebaArteco;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import org.junit.Test;
 
@@ -9,12 +13,12 @@ import org.junit.Test;
  */
 public class AppTest 
 {
-	String texto = "Hola amigos. Esto es una prueba en toda regla, añado "
+	String texto = "Hola amigos. Esto es una prueba en toda regla, hola añado "
 			+ "palabras.\n"
 			+ "\n"
-			+ "Y además añado dos saltos de linea. Palíndomas ana, sis, tut.\n"
+			+ "Y además añado dos dos dos saltos de linea. Palíndomas ana, sis, tut.\n"
 			+ "\n"
-			+ "Sigo testeando. Añado mas texto.";
+			+ "Sigo sigo sigo testeando. Añado mas mas mas hola texto.";
 	
     /**
      * Rigorous Test :-)
@@ -55,5 +59,18 @@ public class AppTest
     public void contarPalindromsTest() {
     	Counter contador = new Counter(texto);
     	assertTrue(contador.countPalindroms() == 4);
+    }
+    
+    @Test
+    public void contarRepeatedTest() {
+    	Counter contador = new Counter(texto);
+    	Map<String, Integer> mapa = new HashMap<String, Integer>();
+    	mapa.put("dos" , 3);
+    	mapa.put("añado" , 3);
+    	mapa.put("hola" , 3);
+    	mapa.put("sigo" , 3);
+    	mapa.put("mas" , 3);
+    	assertEquals(contador.countRepeated().keySet(), mapa.keySet());
+    	assertEquals(contador.countRepeated().values(), mapa.values());
     }
 }
