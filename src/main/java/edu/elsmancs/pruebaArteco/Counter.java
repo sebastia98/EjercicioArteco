@@ -49,4 +49,28 @@ public class Counter {
 		return contador;
 	}
 
+	
+	public int countPalindroms() {
+		// TODO Auto-generated method stub
+		
+		conversor.setArrayList(loren);
+		
+		int contador = 0;
+		
+		for(String word : conversor.getArrayList()) { 
+			
+			String palabraInvert = "";
+			
+			for (int i = word.length() - 1; i >= 0; i -- ) {
+				palabraInvert += word.charAt(i);
+			}
+			
+			if (palabraInvert.equalsIgnoreCase(word)) {
+				contador ++;
+			}
+		}
+		
+		return contador;
+	}
+
 }
