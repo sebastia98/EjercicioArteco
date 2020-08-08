@@ -8,6 +8,7 @@ public class Counter {
 	//Inyección de dependencias
 	
 	private Converser conversor = new Converser(loren);
+	private Identifier identificador = new Identifier();
 	
 	public Counter(String loren) {
 		this.loren = loren;
@@ -59,13 +60,7 @@ public class Counter {
 		
 		for(String word : conversor.getArrayList()) { 
 			
-			String palabraInvert = "";
-			
-			for (int i = word.length() - 1; i >= 0; i -- ) {
-				palabraInvert += word.charAt(i);
-			}
-			
-			if (palabraInvert.equalsIgnoreCase(word)) {
+			if (identificador.identificarPalindroms(word)) {
 				contador ++;
 			}
 		}
