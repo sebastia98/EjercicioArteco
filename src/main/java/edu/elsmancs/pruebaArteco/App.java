@@ -17,8 +17,12 @@ public class App
     			"Maecenas gravida ex ac ex cursus, vel viverra tortor efficitur. Suspendisse porttitor ligula tortor, vel aliquet dolor porttitor eu. Nam id pharetra lacus. In sollicitudin consequat tristique. Quisque fermentum turpis orci, in convallis augue aliquet sed. Proin aliquam lacus quam, ac imperdiet libero iaculis consectetur. Vivamus convallis nunc in finibus tristique. Vivamus eget tortor varius, convallis nisl eu, vulputate ante. Cras in cursus sem, a interdum risus.";
     	
     	Counter contador = new Counter(loren);
-
+    	//Converser converser = new Converser(loren);
+    	//converser.setArrayList(loren);
+    	//Identifier identifier = new Identifier();
     	
     	System.out.println(contador.toString());
+    	
+    	//System.out.println(identifier.identificarPalabrasRepetidas(converser.getArrayList()));
     }
 }

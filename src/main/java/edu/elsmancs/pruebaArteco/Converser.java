@@ -3,12 +3,10 @@ package edu.elsmancs.pruebaArteco;
 import java.util.ArrayList;
 
 public class Converser {
-	String lorenString = null;
 	private char[] lorenArrayChar = null;
 	private ArrayList<String> arrayListLoren = new ArrayList<String>();
 	
-	public Converser(String loren) {
-		this.lorenString = loren;
+	public Converser() {
 	}
 	
 	public void setArrayList(String loren) {
@@ -16,11 +14,9 @@ public class Converser {
 		String palabra = "";
 		
 		for (int i = 0; i < loren.length(); i++) {
-			
 			if (loren.charAt(i) != ' ' && loren.charAt(i) != '.' &&
 				loren.charAt(i) != ',' && loren.charAt(i) != '\n') {
 				palabra = palabra + loren.charAt(i);
-
 			} else {
 				if (palabra != "") {
 					arrayListLoren.add(palabra);

@@ -10,11 +10,12 @@ public class Counter {
 	
 	//Inyección de dependencias
 	
-	private Converser conversor = new Converser(loren);
+	private Converser conversor = new Converser();
 	private Identifier identificador = new Identifier();
 	
 	public Counter(String loren) {
-		this.loren = loren;
+		conversor.setArrayChar(loren);
+		conversor.setArrayList(loren);
 	}
 	
 	public String toString() {
@@ -22,19 +23,14 @@ public class Counter {
 			 + "Este texto tiene " + this.countPhrases() + " frases.\n"
 		   	 + "Este texto tiene " + this.countParagraphs() + " párrafos.\n"
 		   	 + "Este texto tiene " + this.countPalindroms() + " palíndromas.\n"
-		   	 + "Estas son las palabras más usadas " + this.countRepeated();
+		   	 + "Estos son las palabras más usadas " + this.countRepeated();
 	}
 	
 	public int countWords() {
-		conversor.setArrayList(this.loren);
 		return conversor.getArrayList().size();
 	}
 	
 	public int countPhrases() {
-		// TODO Auto-generated method stub
-		
-		conversor.setArrayChar(this.loren);
-		
 		int contador = 0;
 		
 		for (int i = 0; i < conversor.getArrayChar().length; i ++) {
@@ -46,10 +42,6 @@ public class Counter {
 	}
 
 	public int countParagraphs() {
-		// TODO Auto-generated method stub
-		
-		conversor.setArrayChar(this.loren);
-		
 		int contador = 1;
 		
 		for (int i = 0; i < conversor.getArrayChar().length; i ++) {
@@ -63,10 +55,6 @@ public class Counter {
 
 	
 	public int countPalindroms() {
-		// TODO Auto-generated method stub
-		
-		conversor.setArrayList(loren);
-		
 		int contador = 0;
 		
 		for(String word : conversor.getArrayList()) { 
@@ -80,12 +68,10 @@ public class Counter {
 	}
 
 	public Map<String, Integer> countRepeated() {
-		
 		Map<String, Integer> tablaPalabras = new HashMap<String, Integer>();
-		conversor.setArrayList(loren);
 		ArrayList<ArrayList<String>> listasPalabrasOrdenada = identificador.identificarPalabrasRepetidas(conversor.getArrayList());
 		
-		for(int i = 0; i <= 5; i ++) {
+		for(int i = 0; i <= 4; i ++) {
 			
 			tablaPalabras.put(listasPalabrasOrdenada.get(i).get(0), listasPalabrasOrdenada.get(i).size());
 			

@@ -39,13 +39,13 @@ public class Identifier {
 			}
 		}
 		
-		listasPalabras = ordenarSetRepeated(listasPalabras);
+		listasPalabras = ordenarListas(listasPalabras);
 		
 		return listasPalabras;
 		
 	}
 	
-	private ArrayList<ArrayList<String>> ordenarSetRepeated(ArrayList<ArrayList<String>> setRepetidos){
+	private ArrayList<ArrayList<String>> ordenarListas(ArrayList<ArrayList<String>> setRepetidos){
 		
 		ArrayList<String> listaReferencia = new ArrayList<String>();
 		listaReferencia.add("Este es el último de set de referencia de tamaño 1");
@@ -65,6 +65,10 @@ public class Identifier {
 		}
 		return listaOrdenada;
 		
+	}
+	
+	public ArrayList<String> crearTuplasPalabras() {
+		return null;
 	}
 
 }
