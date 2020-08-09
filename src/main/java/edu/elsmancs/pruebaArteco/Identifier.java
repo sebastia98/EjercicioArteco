@@ -18,7 +18,7 @@ public class Identifier {
 		return false;
 	}
 	
-	public ArrayList<ArrayList<String>> identificarPalabrasRepetidas(ArrayList<String> palabras){
+	public ArrayList<ArrayList<String>> identificarStringsRepetidas(ArrayList<String> palabras){
 		
 		Boolean indicador;
 		ArrayList<ArrayList<String>> listasPalabras = new ArrayList<ArrayList<String>>();
@@ -67,8 +67,25 @@ public class Identifier {
 		
 	}
 	
-	public ArrayList<String> crearTuplasPalabras() {
-		return null;
+	public ArrayList<ArrayList<String>> crearCombinacionesPalabras(ArrayList<String> listaPalabras) {
+		
+		ArrayList<String> listaCombinaciones = new ArrayList<String>();
+		ArrayList<ArrayList<String>> listaListasCombinaciones = new ArrayList<ArrayList<String>>();
+		
+		int posicion = 0;
+		for (String palabra : listaPalabras) {
+			String combinacionNueva = palabra;
+			for (int i = posicion + 1; i < listaPalabras.size(); i++) {
+				combinacionNueva += " " + listaPalabras.get(i);
+				listaCombinaciones.add(combinacionNueva);
+			}
+			posicion ++;
+		}
+		
+		listaListasCombinaciones = identificarStringsRepetidas(listaCombinaciones);
+		listaListasCombinaciones = ordenarListas(listaListasCombinaciones);
+		
+		return listaListasCombinaciones;
 	}
 
 }

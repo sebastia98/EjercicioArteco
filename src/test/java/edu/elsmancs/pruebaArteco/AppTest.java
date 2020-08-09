@@ -34,7 +34,7 @@ public class AppTest
     @Test
     public void contarPalabrasTest() {
     	Counter contador = new Counter(texto);
-    	assertTrue(contador.countWords() == 57);
+    	assertTrue(contador.contarPalabras() == 57);
     }
     /*
     @Test
@@ -48,26 +48,26 @@ public class AppTest
     @Test
     public void contarFrasesTest() {
     	Counter contador = new Counter(texto);
-    	assertTrue(contador.countPhrases() == 6);
+    	assertTrue(contador.contarFrases() == 6);
     }
     
     @Test
     public void contarParagraphsTest() {
     	Counter contador = new Counter(texto);
-    	assertTrue(contador.countParagraphs() == 3);
+    	assertTrue(contador.contarParrafos() == 3);
     }
     
     @Test
     public void contarPalindromsTest() {
     	Counter contador = new Counter(texto);
-    	assertTrue(contador.countPalindroms() == 10);
+    	assertTrue(contador.contarPalindromos() == 10);
     }
     
     @Test
     public void contarRepeatedTest() {
     	Counter contador = new Counter(texto);
     	Map<String, Integer> tablaPalabras = new HashMap<String, Integer>();
-    	tablaPalabras = contador.countRepeated();
+    	tablaPalabras = contador.contarPalabrasRepetidas();
     	assertTrue(tablaPalabras.containsKey("cinco"));
     	assertTrue(tablaPalabras.containsKey("amigos"));
     	assertTrue(tablaPalabras.containsKey("Sigo"));

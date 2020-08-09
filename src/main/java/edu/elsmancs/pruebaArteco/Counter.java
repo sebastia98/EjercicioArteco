@@ -6,7 +6,6 @@ import java.util.Map;
 
 public class Counter {
 	
-	String loren = null;
 	
 	//Inyección de dependencias
 	
@@ -19,20 +18,20 @@ public class Counter {
 	}
 	
 	public String toString() {
-		return "Este texto tiene " + this.countWords() + " palabras.\n"
-			 + "Este texto tiene " + this.countPhrases() + " frases.\n"
-		   	 + "Este texto tiene " + this.countParagraphs() + " párrafos.\n"
-		   	 + "Este texto tiene " + this.countPalindroms() + " palíndromas.\n"
-		   	 + "Estos son las palabras más usadas " + this.countRepeated();
+		return "Este texto tiene " + this.contarPalabras() + " palabras.\n"
+			 + "Este texto tiene " + this.contarFrases() + " frases.\n"
+		   	 + "Este texto tiene " + this.contarParrafos() + " párrafos.\n"
+		   	 + "Este texto tiene " + this.contarPalindromos() + " palíndromas.\n"
+		   	 + "Estas son las palabras más usadas " + this.contarPalabrasRepetidas() + "\n"
+		   	 + "Estas son las combinaciones de palabras más usadas " + this.contarCombinacionesRepetidas();
 	}
 	
-	public int countWords() {
+	public int contarPalabras() {
 		return conversor.getArrayList().size();
 	}
 	
-	public int countPhrases() {
+	public int contarFrases() {
 		int contador = 0;
-		
 		for (int i = 0; i < conversor.getArrayChar().length; i ++) {
 			if (conversor.getArrayChar()[i] == '.') {
 				contador ++;
@@ -41,7 +40,7 @@ public class Counter {
 		return contador;
 	}
 
-	public int countParagraphs() {
+	public int contarParrafos() {
 		int contador = 1;
 		
 		for (int i = 0; i < conversor.getArrayChar().length; i ++) {
@@ -54,7 +53,7 @@ public class Counter {
 	}
 
 	
-	public int countPalindroms() {
+	public int contarPalindromos() {
 		int contador = 0;
 		
 		for(String word : conversor.getArrayList()) { 
@@ -66,10 +65,10 @@ public class Counter {
 		
 		return contador;
 	}
-
-	public Map<String, Integer> countRepeated() {
+	
+	public Map<String, Integer> contarPalabrasRepetidas() {
 		Map<String, Integer> tablaPalabras = new HashMap<String, Integer>();
-		ArrayList<ArrayList<String>> listasPalabrasOrdenada = identificador.identificarPalabrasRepetidas(conversor.getArrayList());
+		ArrayList<ArrayList<String>> listasPalabrasOrdenada = identificador.identificarStringsRepetidas(conversor.getArrayList());
 		
 		for(int i = 0; i <= 4; i ++) {
 			
@@ -77,6 +76,21 @@ public class Counter {
 			
 		}
 		return tablaPalabras;
+	}
+	
+	public Map<String, Integer> contarCombinacionesRepetidas(){
+		
+		ArrayList<ArrayList<String>> listaCombinaciones = new ArrayList<ArrayList<String>>();
+		listaCombinaciones = identificador.crearCombinacionesPalabras(conversor.getArrayList());
+		
+		Map<String, Integer> tablaCombinaciones = new HashMap<String, Integer>();
+		
+		for(int i = 0; i <= 4; i ++) {
+			
+			tablaCombinaciones.put(listaCombinaciones.get(i).get(0), listaCombinaciones.get(i).size());
+			
+		}
+		return tablaCombinaciones;
 	}
 
 }
