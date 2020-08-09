@@ -1,5 +1,8 @@
 package edu.elsmancs.pruebaArteco;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Counter {
 	
@@ -12,6 +15,14 @@ public class Counter {
 	
 	public Counter(String loren) {
 		this.loren = loren;
+	}
+	
+	public String toString() {
+		return "Este texto tiene " + this.countWords() + " palabras.\n"
+			 + "Este texto tiene " + this.countPhrases() + " frases.\n"
+		   	 + "Este texto tiene " + this.countParagraphs() + " párrafos.\n"
+		   	 + "Este texto tiene " + this.countPalindroms() + " palíndromas.\n"
+		   	 + "Estas son las palabras más usadas " + this.countRepeated();
 	}
 	
 	public int countWords() {
@@ -60,12 +71,26 @@ public class Counter {
 		
 		for(String word : conversor.getArrayList()) { 
 			
-			if (identificador.identificarPalindroms(word)) {
+			if (identificador.identificarPalindromos(word)) {
 				contador ++;
 			}
 		}
 		
 		return contador;
+	}
+
+	public Map<String, Integer> countRepeated() {
+		
+		Map<String, Integer> tablaPalabras = new HashMap<String, Integer>();
+		conversor.setArrayList(loren);
+		ArrayList<ArrayList<String>> listasPalabrasOrdenada = identificador.identificarPalabrasRepetidas(conversor.getArrayList());
+		
+		for(int i = 0; i <= 5; i ++) {
+			
+			tablaPalabras.put(listasPalabrasOrdenada.get(i).get(0), listasPalabrasOrdenada.get(i).size());
+			
+		}
+		return tablaPalabras;
 	}
 
 }
