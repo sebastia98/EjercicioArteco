@@ -33,7 +33,7 @@ public class CounterTest
     public void contarPalindromsTest() {
     	String texto = "Ana sis palabra sis ana.";
     	Counter contador = new Counter(texto);
-    	assertTrue(contador.contarPalindromos() == 4);
+    	assertTrue(contador.contarPalindromos().size() == 4);
     }
     @Test
     public void contarRepeatedTest() {

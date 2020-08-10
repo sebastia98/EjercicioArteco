@@ -33,9 +33,9 @@ public class Counter {
 		return "Este texto tiene " + this.contarPalabras() + " palabras.\n"
 			 + "Este texto tiene " + this.contarFrases() + " frases.\n"
 		   	 + "Este texto tiene " + this.contarParrafos() + " párrafos.\n"
-		   	 + "Este texto tiene " + this.contarPalindromos() + " palíndromas.\n"
-		   	 + "Estas son las palabras más usadas " + this.contarPalabrasRepetidas() + "\n"
-		   	 + "Estas son las combinaciones de palabras más usadas " + this.contarCombinacionesRepetidas();
+		   	 + "Este texto tiene " + this.contarPalindromos().size() + " palíndromas. Y son estos: " + this.contarPalindromos() +  "\n"
+		   	 + "Estas son las 5 palabras más usadas: " + this.contarPalabrasRepetidas() + "\n"
+		   	 + "Estas son las 5 combinaciones de palabras más usadas: " + this.contarCombinacionesRepetidas();
 	}
 	/**
 	 * Cuenta todas las palabras del arrayList usando el método size().
@@ -64,10 +64,10 @@ public class Counter {
 	 * @return int
 	 */
 	public int contarParrafos() {
-		int contador = 1;
+		int contador = 0;
 		
 		for (int i = 0; i < conversor.getArrayChar().length; i ++) {
-			if (conversor.getArrayChar()[i] == '\n' && conversor.getArrayChar()[i + 1] == '\n') {
+			if ((conversor.getArrayChar()[i] == '.' && conversor.getArrayChar()[i + 1] == '\n')) {
 				contador ++;
 			}
 		}
@@ -78,15 +78,15 @@ public class Counter {
 	 * y los cuenta.
 	 * @return
 	 */
-	public int contarPalindromos() {
-		int contador = 0;
+	public ArrayList<String> contarPalindromos() {
+		ArrayList<String> listaPalindromos = new ArrayList<String>();
 		
 		for(String word : conversor.getArrayPalabras()) { 
 			if (identificador.identificarPalindromos(word)) {
-				contador ++;
+				listaPalindromos.add(word);
 			}
 		}
-		return contador;
+		return listaPalindromos;
 	}
 	/**
 	 * Identifier identifica los Strings repetidos y ordena las listasy los agrupa en listas

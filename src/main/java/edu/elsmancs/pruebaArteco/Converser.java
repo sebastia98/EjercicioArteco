@@ -12,7 +12,7 @@ public class Converser {
 	private ArrayList<String> arrayPalabras = new ArrayList<String>();
 	/**
 	 * Recibe el String por parámetro y recorre cada carácter formando palabras
-	 * y ignora espacios, comas, puntos y saltos de linea.
+	 * y ignora los signos de puntuación.
 	 * @param loren
 	 */
 	public void setArrayPalabras(String loren) {
@@ -21,7 +21,10 @@ public class Converser {
 		
 		for (int i = 0; i < loren.length(); i++) {
 			if (loren.charAt(i) != ' ' && loren.charAt(i) != '.' &&
-				loren.charAt(i) != ',' && loren.charAt(i) != '\n') {
+				loren.charAt(i) != ',' && loren.charAt(i) != '\n' &&
+				loren.charAt(i) != ';' && loren.charAt(i) != ':' &&
+				loren.charAt(i) != '¿' && loren.charAt(i) != '?' &&
+				loren.charAt(i) != '!' && loren.charAt(i) != '!') {
 				palabra = palabra + loren.charAt(i);
 			} else {
 				if (palabra != "") {
