@@ -52,10 +52,6 @@ public class Identifier {
 				listasPalabras.add(palabraNueva);
 			}
 		}
-		/*
-		 * Devuelve las listas ordenadas por tamaño, las palabras mas repetidas van delante.
-		 */
-		listasPalabras = ordenarListas(listasPalabras);
 		return listasPalabras;
 		
 	}
@@ -66,7 +62,7 @@ public class Identifier {
 	 * @param listasStringsRepetidas
 	 * @return ArrayList<ArrayList<String>>
 	 */
-	private ArrayList<ArrayList<String>> ordenarListas(ArrayList<ArrayList<String>> listasStringsRepetidas){
+	public ArrayList<ArrayList<String>> ordenarListas(ArrayList<ArrayList<String>> listasStringsRepetidas){
 		
 		/*
 		 * Creamos una lista de Strings de referencia de tamaño uno que introducimos dentro de la lista ordenada 
@@ -96,11 +92,9 @@ public class Identifier {
 	 * @param listaPalabras
 	 * @return ArrayList<ArrayList<String>>
 	 */
-	public ArrayList<ArrayList<String>> crearCombinacionesPalabras(ArrayList<String> listaPalabras) {
+	public ArrayList<String> crearCombinacionesPalabras(ArrayList<String> listaPalabras) {
 		
 		ArrayList<String> listaCombinaciones = new ArrayList<String>();
-		ArrayList<ArrayList<String>> listaListasCombinaciones = new ArrayList<ArrayList<String>>();
-		
 		/*
 		 * Genera las combinaciones respecto a la palabra que recibe. Una vez creadas todas las posibles
 		 * combinaciones, pasamos a la siguente palabra.
@@ -114,14 +108,7 @@ public class Identifier {
 			}
 			posicion ++;
 		}
-		/*
-		 * Identificas las combinaciones repetidas y las agrupa en listas dentro de la lista
-		 * y luego las ordenamos.
-		 */
-		listaListasCombinaciones = identificarStringsRepetidas(listaCombinaciones);
-		listaListasCombinaciones = ordenarListas(listaListasCombinaciones);
-		
-		return listaListasCombinaciones;
+		return listaCombinaciones;
 	}
 
 }
