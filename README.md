@@ -1,4 +1,4 @@
-### EjercicioArteco
-# Ejercicio propuesto por Artecto
+## EjercicioArteco
+### Ejercicio propuesto por Artecto
 ## Sebastià Adrover Llaneras
-# CIFP Francesc de Borja Moll
+### CIFP Francesc de Borja Moll
