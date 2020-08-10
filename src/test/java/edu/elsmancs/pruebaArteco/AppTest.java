@@ -36,14 +36,6 @@ public class AppTest
     	Counter contador = new Counter(texto);
     	assertTrue(contador.contarPalabras() == 57);
     }
-    /*
-    @Test
-    public void textoVacioTest() {
-    	Counter contador = new Counter("");
-    	assertTrue(contador.countWords() == 0);
-    }
-    */
-    // Contar frases
     
     @Test
     public void contarFrasesTest() {
@@ -65,14 +57,32 @@ public class AppTest
     
     @Test
     public void contarRepeatedTest() {
-    	Counter contador = new Counter(texto);
+    	String prueba = "Uno uno uno uno uno ... dos dos dos dos dos ... tres tres tres tres ..."
+    			      + " cuatro cuatro cuatro cuatro cuatro ... cinco cinco cinco";
+    	Counter contador = new Counter(prueba);
     	Map<String, Integer> tablaPalabras = new HashMap<String, Integer>();
     	tablaPalabras = contador.contarPalabrasRepetidas();
+    	assertTrue(tablaPalabras.containsKey("uno"));
+    	assertTrue(tablaPalabras.containsKey("dos"));
+    	assertTrue(tablaPalabras.containsKey("tres"));
+    	assertTrue(tablaPalabras.containsKey("cuatro"));
     	assertTrue(tablaPalabras.containsKey("cinco"));
-    	assertTrue(tablaPalabras.containsKey("amigos"));
-    	assertTrue(tablaPalabras.containsKey("Sigo"));
-    	assertTrue(tablaPalabras.containsKey("sis"));
-    	assertTrue(tablaPalabras.containsKey("es"));
-    	assertTrue(tablaPalabras.containsKey("mas"));
+    }
+    
+    @Test
+    public void contarTuplasTest() {
+    	String prueba = "Combinación uno fej combinación uno iuc ie3ufn combinación uno iufb "
+    			      + "combinación dos ring combinación dos ieng combinación dos onrf combinación dos fdsf "
+    			      + "combinación tres ojrnf combinación tres gee combinación tres efbv"
+    			      + "combinación cuatro odk combinación cuatro dine combinación cuatro revg combinación cuatro wf "
+    			      + "combinación cinco oiwfn combinación cinco of combinación cinco ofcne ";
+    	Counter contador = new Counter(prueba);
+    	Map<String, Integer> tablaCombinaciones = new HashMap<String, Integer>();
+    	tablaCombinaciones = contador.contarCombinacionesRepetidas();
+    	assertTrue(tablaCombinaciones.containsKey("combinación uno"));
+    	assertTrue(tablaCombinaciones.containsKey("combinación dos"));
+    	assertTrue(tablaCombinaciones.containsKey("combinación tres"));
+    	assertTrue(tablaCombinaciones.containsKey("combinación cuatro"));
+    	assertTrue(tablaCombinaciones.containsKey("combinación cinco"));
     }
 }

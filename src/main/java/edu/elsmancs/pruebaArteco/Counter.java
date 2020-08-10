@@ -72,7 +72,7 @@ public class Counter {
 		
 		for(int i = 0; i <= 4; i ++) {
 			
-			tablaPalabras.put(listasPalabrasOrdenada.get(i).get(0), listasPalabrasOrdenada.get(i).size());
+			tablaPalabras.put(listasPalabrasOrdenada.get(i).get(0).toLowerCase(), listasPalabrasOrdenada.get(i).size());
 			
 		}
 		return tablaPalabras;
@@ -87,7 +87,7 @@ public class Counter {
 		
 		for(int i = 0; i <= 4; i ++) {
 			
-			tablaCombinaciones.put(listaCombinaciones.get(i).get(0), listaCombinaciones.get(i).size());
+			tablaCombinaciones.put(listaCombinaciones.get(i).get(0).toLowerCase(), listaCombinaciones.get(i).size());
 			
 		}
 		return tablaCombinaciones;
