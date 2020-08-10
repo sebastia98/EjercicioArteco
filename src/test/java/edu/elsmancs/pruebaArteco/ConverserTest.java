@@ -23,9 +23,9 @@ public class ConverserTest {
 	}
 	@Test
 	public void setArrayCaracteres() {
-		String texto = "Hola. Caracter";
+		String texto = "Hola. Caracter.";
 		Converser converser = new Converser();
-		char [] charTest = {'h', 'o','l','a','.', ' ', 'c', 'a', 'r', 'a', 'c', 't', 'e', 'r'}; 
+		char [] charTest = {'h', 'o','l','a','.', ' ', 'c', 'a', 'r', 'a', 'c', 't', 'e', 'r', '.'}; 
 		converser.setArrayChar(texto);
 		assertArrayEquals(converser.getArrayChar(), charTest);	
 	}
