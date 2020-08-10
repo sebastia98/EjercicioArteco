@@ -1,15 +1,24 @@
 package edu.elsmancs.pruebaArteco;
 
 import java.util.ArrayList;
-
+/**
+ * La clase Converser convierte el String que le pasamos en dos 
+ * estructuras distintas. Un array de todos los carácteres del texto 
+ * y un arrayList de sus palabras. 
+ */
 public class Converser {
-	private char[] lorenArrayChar = null;
-	private ArrayList<String> arrayListLoren = new ArrayList<String>();
-	
-	public Converser() {
-	}
-	
-	public void setArrayList(String loren) {
+	private char[] arrayCaracteres = null;
+	private ArrayList<String> arrayPalabras = new ArrayList<String>();
+	/**
+	 * Constructor sin implementación.
+	 */
+	public Converser() {}
+	/**
+	 * Recibe el String por parámetro y recorre cada carácter formando palabras
+	 * y ignora espacios, comas, puntos y saltos de linea.
+	 * @param loren
+	 */
+	public void setArrayPalabras(String loren) {
 		
 		String palabra = "";
 		
@@ -19,22 +28,32 @@ public class Converser {
 				palabra = palabra + loren.charAt(i);
 			} else {
 				if (palabra != "") {
-					arrayListLoren.add(palabra);
+					arrayPalabras.add(palabra.toLowerCase());
 					palabra = "";
 				}
 			}
 		}
 	}
-
-	public ArrayList<String> getArrayList(){
-		return arrayListLoren;
+    /**
+     * Devuelve el array de palabras.
+     * @return ArrayList<String>
+     */
+	public ArrayList<String> getArrayPalabras(){
+		return arrayPalabras;
 	}
-	
+	/**
+	 * Recibe el String por parámetro y genera un array de carácteres 
+	 * con el método toCharArray().
+	 * @param loren
+	 */
 	public void setArrayChar(String loren) {
-		this.lorenArrayChar = loren.toCharArray();
+		this.arrayCaracteres = loren.toLowerCase().toCharArray();
 	}
-	
+	/**
+     * Devuelve el array de carácteres.
+     * @return char[]
+     */
 	public char[] getArrayChar() {
-		return this.lorenArrayChar;
+		return this.arrayCaracteres;
 	}
 }
