@@ -30,12 +30,20 @@ public class Counter {
 	}
 	@Override
 	public String toString() {
-		return "Este texto tiene " + this.contarPalabras() + " palabras.\n"
-			 + "Este texto tiene " + this.contarFrases() + " frases.\n"
-		   	 + "Este texto tiene " + this.contarParrafos() + " párrafos.\n"
-		   	 + "Este texto tiene " + this.contarPalindromos().size() + " palíndromas. Y son estos: " + this.contarPalindromos() +  "\n"
-		   	 + "Estas son las 5 palabras más usadas: " + this.contarPalabrasRepetidas() + "\n"
-		   	 + "Estas son las 5 combinaciones de palabras más usadas: " + this.contarCombinacionesRepetidas();
+		return "Este texto tiene " + this.contarPalabras() + " palabras."
+			 + "\n ---------------------------------------------------\n"
+			 + "Este texto tiene " + this.contarFrases() + " frases."
+			 + "\n ---------------------------------------------------\n"
+		   	 + "Este texto tiene " + this.contarParrafos() + " párrafos."
+		   	 + "\n ---------------------------------------------------\n"
+		   	 + "Este texto tiene " + this.contarPalindromos().size() + " palíndromas.\n"
+		   	 + "	Y son estos: " + this.contarPalindromos()
+		   	 + "\n ---------------------------------------------------\n"
+		   	 + "Estas son las 5 palabras más usadas:\n"
+		   	 + "	" + this.contarPalabrasRepetidas()
+		   	 + "\n ---------------------------------------------------\n"
+		   	 + "Estas son las 5 combinaciones de palabras más usadas:\n"
+		   	 + "	" + this.contarCombinacionesRepetidas();
 	}
 	/**
 	 * Cuenta todas las palabras del arrayList usando el método size().
