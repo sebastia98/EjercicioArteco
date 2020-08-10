@@ -5,14 +5,11 @@ import java.util.ArrayList;
  * La clase Converser convierte el String que le pasamos en dos 
  * estructuras distintas. Un array de todos los carácteres del texto 
  * y un arrayList de sus palabras. 
+ * @author sebas
  */
 public class Converser {
 	private char[] arrayCaracteres = null;
 	private ArrayList<String> arrayPalabras = new ArrayList<String>();
-	/**
-	 * Constructor sin implementación.
-	 */
-	public Converser() {}
 	/**
 	 * Recibe el String por parámetro y recorre cada carácter formando palabras
 	 * y ignora espacios, comas, puntos y saltos de linea.
