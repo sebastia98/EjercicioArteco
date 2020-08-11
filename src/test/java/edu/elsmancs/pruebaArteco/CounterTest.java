@@ -23,9 +23,9 @@ public class CounterTest
     }
     @Test
     public void contarParagraphsTest() {
-    	String texto = "Hola amigos.\n\n"
-			          + "Esto es otro test.\n\n"
-			          + "Con tres párrafos.";
+    	String texto = "Hola amigos.\n"
+			          + "Esto es otro test.\n"
+			          + "Con tres párrafos.\n";
     	Counter contador = new Counter(texto);
     	assertTrue(contador.contarParrafos() == 3);
     }

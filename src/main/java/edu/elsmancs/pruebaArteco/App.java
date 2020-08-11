@@ -5,9 +5,10 @@ import java.io.IOException;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
-
 /**
- * Hello world!
+ * Clase Main, parsea el html de la url que genera el texto lorenIpsun y 
+ * crea un String con sus párrafos.
+ * @author sebas
  *
  */
 public class App 
